@@ -1,0 +1,9 @@
+Produto,Marca,Quantidade,preço,Total de elementos, Status do Estoque,Status do Valor Total
+Camiseta,Nike,20,"R$ 89,90","R$ 1.798,00",Estoque Alto,Meta Batida!
+Calça,Adidas,10,"R$ 59,90","R$ 599,00",,
+Tênis,Umbro,30,"R$ 199,90","R$ 5.997,00",,
+Boné,New Era,15,"R$ 49,90","R$ 748,50",,
+Meia,Puma,50,"R$ 19,90","R$ 995,00",,
+,,Total de produtos,125,,,
+,,Preço médio,"R$ 59,90",,,
+,,Valor total em estoque,"R$ 10.137,50",,,
