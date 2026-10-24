@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empreendedorismo, Inovação e Atitude</title>
+  
+  <style>
+    /* Reset Básico e Fontes */
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    strong { font-weight: 600; }
+    em { font-style: italic; }
+
+    /* Layout Geral */
+    .container { 
+      max-width: 56rem; 
+      margin: 0 auto; 
+      padding: 1.5rem; 
+    }
+    @media (min-width: 768px) { 
+      .container { padding: 2.5rem; } 
+    }
+
+    /* Cabeçalho (Header) */
+    header { margin-bottom: 2rem; }
+    .label-primary { 
+      font-size: 0.875rem; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em; 
+      color: #4f46e5; 
+    }
+    .main-title { 
+      font-size: 1.875rem; 
+      line-height: 2.25rem; 
+      font-weight: 800; 
+      margin-top: 0.5rem; 
+      margin-bottom: 0.75rem; 
+      color: #0f172a; 
+    }
+    @media (min-width: 768px) { 
+      .main-title { font-size: 2.25rem; line-height: 2.5rem; } 
+    }
+    .subtitle { 
+      color: #64748b; 
+      font-size: 1.125rem; 
+      line-height: 1.75rem; 
+    }
+
+    /* Seção 1: Texto Base */
+    .card-base { 
+      background-color: #fff; 
+      border-radius: 1rem; 
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); 
+      border: 1px solid #e2e8f0; 
+      padding: 1.5rem; 
+      color: #334155; 
+      line-height: 1.625; 
+    }
+    @media (min-width: 768px) { 
+      .card-base { padding: 2rem; } 
+    }
+    .card-base p + p { 
+      margin-top: 1.5rem; 
+    }
+
+    /* Seção 2: Atividades (Escura) */
+    .card-dark { 
+      margin-top: 2rem; 
+      background-color: #1e1b4b; 
+      color: #fff; 
+      border-radius: 1rem; 
+      padding: 1.5rem; 
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); 
+    }
+    @media (min-width: 768px) { 
+      .card-dark { padding: 2rem; } 
+    }
+    .label-dark { 
+      color: #a5b4fc; 
+      font-size: 0.875rem; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em; 
+    }
+    .title-dark { 
+      font-size: 1.5rem; 
+      line-height: 2rem; 
+      font-weight: 700; 
+      margin-top: 0.5rem; 
+      margin-bottom: 1rem; 
+    }
+    .desc-dark { 
+      color: #e0e7ff; 
+      line-height: 1.625; 
+      margin-bottom: 2rem; 
+    }
+    .grid { 
+      display: grid; 
+      gap: 1.5rem; 
+    }
+    @media (min-width: 768px) { 
+      .grid { grid-template-columns: repeat(2, 1fr); } 
+    }
+    .grid-item { 
+      background-color: rgba(255, 255, 255, 0.1); 
+      border-radius: 0.75rem; 
+      padding: 1.25rem; 
+      border: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+    .grid-title { 
+      font-weight: 700; 
+      margin-bottom: 0.75rem; 
+      color: #eef2ff; 
+    }
+    .list { 
+      color: #c7d2fe; 
+      font-size: 0.875rem; 
+      list-style: none;
+    }
+    .list-item { 
+      display: flex; 
+      align-items: flex-start; 
+      margin-bottom: 0.5rem; 
+    }
+    .list-item:last-child { margin-bottom: 0; }
+    .bullet { 
+      margin-right: 0.5rem; 
+      color: #818cf8; 
+    }
+
+    /* Seção 3: Entrega (Aviso) */
+    .card-warning { 
+      margin-top: 2rem; 
+      background-color: #fffbeb; 
+      border: 1px solid #fde68a; 
+      border-radius: 1rem; 
+      padding: 1.5rem; 
+    }
+    @media (min-width: 768px) { 
+      .card-warning { padding: 2rem; } 
+    }
+    .label-warning { 
+      color: #b45309; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em; 
+      font-size: 0.875rem; 
+    }
+    .title-warning { 
+      font-size: 1.5rem; 
+      line-height: 2rem; 
+      font-weight: 700; 
+      margin-top: 0.5rem; 
+      margin-bottom: 1rem; 
+      color: #451a03; 
+    }
+    .desc-warning { 
+      line-height: 1.625; 
+      color: #78350f; 
+      margin-bottom: 1rem; 
+    }
+    .warning-box { 
+      background-color: rgba(254, 243, 199, 0.5); 
+      border-radius: 0.5rem; 
+      padding: 1rem; 
+      border: 1px solid rgba(253, 230, 138, 0.5); 
+      color: #78350f; 
+    }
+    .warning-title { 
+      display: block; 
+      font-weight: 700; 
+      color: #b45309; 
+      margin-bottom: 0.25rem; 
+    }
+    .highlight { 
+      background-color: #fde68a; 
+      padding: 0.125rem 0.25rem; 
+      border-radius: 0.25rem; 
+      font-weight: 600; 
+    }
+
+    /* Rodapé */
+    footer { 
+      text-align: center; 
+      font-size: 0.875rem; 
+      color: #94a3b8; 
+      margin-top: 3rem; 
+      margin-bottom: 1rem; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header>
+      <span class="label-primary">
+        Empreendedorismo e Inovação
+      </span>
+      <h1 class="main-title">
+        Do sonho à ação: pessoas, atitude e resultados
+      </h1>
+      <p class="subtitle">
+        Atividade de integração com a palestra de Hortência Marcari
+      </p>
+    </header>
+
+    <section id="texto-base" class="card-base">
+      <p>
+        No ecossistema empreendedor, os grandes projetos não começam com produtos ou tecnologia, mas com pessoas e seus <strong>sonhos</strong>. Contudo, o desejo de transformar uma realidade só gera impacto quando ganha clareza e direção. O <strong>propósito</strong> funciona como a bússola estratégica que define o sentido da organização (o seu "porquê"), enquanto as <strong>metas SMART</strong> (específicas, mensuráveis, alcançáveis, relevantes e temporais) estruturam essa visão em objetivos concretos e mensuráveis.
+      </p>
+
+      <p>
+        Para sustentar a execução dessas metas ao longo do tempo, a disciplina precisa ser alimentada por motivação autêntica. A <strong>Motivação 3.0</strong> demonstra que o engajamento de alto nível nasce de três pilares: <em>autonomia</em> para tomar decisões e gerir o próprio trabalho, <em>domínio</em> para desenvolver competências e buscar o aperfeiçoamento constante, e <em>propósito</em> para enxergar significado nas entregas. Quando a complexidade do desafio encontra o nível ideal de competência do indivíduo ou da equipe, atinge-se o estado de <strong>flow</strong>: um momento de imersão total, foco absoluto e produtividade fluida.
+      </p>
+
+      <p>
+        Ainda assim, motivação e talento só se convertem em valor de mercado quando acompanhados de <strong>preparação e disciplina</strong>. Empreendedores de alto impacto cultivam um <strong>mindset de crescimento</strong>, entendendo que a excelência operacional é fruto da prática deliberada, do aprendizado contínuo e do aprimoramento constante de processos. Não se trata de sorte ou intuição pura, mas de estar preparado para capturar as oportunidades quando elas surgem.
+      </p>
+
+      <p>
+        Entretanto, a jornada empreendedora é repleta de incertezas e cenários adversos. Em momentos de crise, falhas de mercado ou mudanças inesperadas, a <strong>inteligência emocional e a resiliência</strong> tornam-se diferenciais competitivos. Em vez de se apegar cegamente a um modelo de negócio ou plano inicial que perdeu a eficácia, o líder empreendedor mantém o foco no <strong>objetivo estratégico final</strong>, demonstrando flexibilidade para recalcular a rota, aprender com os erros e reestruturar a operação. Essa capacidade de adaptação ágil e contínua é a essência da <strong>inovação</strong>.
+      </p>
+
+      <p>
+        Por fim, nenhum negócio prospera isoladamente. A <strong>liderança pelo exemplo</strong> e a capacidade de articulação são fundamentais para alinhar times e construir culturas organizacionais fortes. O potencial individual só atinge escala e gera valor sustentável quando inserido em um <strong>ecossistema de inovação</strong> robusto — composto por colaboradores, mentores, parceiros comerciais, investidores, universidades e instituições que potencializam o crescimento e multiplicam o impacto da empresa na sociedade.
+      </p>
+    </section>
+
+    <section class="card-dark">
+      <div class="label-dark">
+        Atividade durante a palestra
+      </div>
+      <h2 class="title-dark">
+        Conecte os conceitos às experiências de Hortência
+      </h2>
+      <p class="desc-dark">
+        Durante a palestra, não procure apenas frases motivacionais. Observe
+        histórias, decisões, dificuldades, mudanças de estratégia, rotinas de preparo, relações com
+        outras pessoas e situações vivenciadas pela palestrante. Identifique
+        exemplos práticos que possam ser relacionados aos conceitos teóricos estudados em aula.
+      </p>
+
+      <div class="grid">
+        <div class="grid-item">
+          <h3 class="grid-title">Observe relações com:</h3>
+          <ul class="list">
+            <li class="list-item"><span class="bullet">•</span> sonhos, visão e propósito</li>
+            <li class="list-item"><span class="bullet">•</span> metas SMART e foco em resultados</li>
+            <li class="list-item"><span class="bullet">•</span> autonomia, domínio e motivação</li>
+            <li class="list-item"><span class="bullet">•</span> preparação, disciplina e busca pelo flow</li>
+            <li class="list-item"><span class="bullet">•</span> resiliência, gestão de erros e pressão</li>
+            <li class="list-item"><span class="bullet">•</span> adaptação estratégica e inovação</li>
+            <li class="list-item"><span class="bullet">•</span> liderança por exemplo e trabalho em equipe</li>
+            <li class="list-item"><span class="bullet">•</span> ecossistemas, parcerias e valor gerado</li>
+          </ul>
+        </div>
+
+        <div class="grid-item">
+          <h3 class="grid-title">Para cada relação, pergunte:</h3>
+          <ul class="list">
+            <li class="list-item"><span class="bullet">•</span> O que aconteceu na trajetória relatada?</li>
+            <li class="list-item"><span class="bullet">•</span> Qual conceito empreendedor aparece nessa situação?</li>
+            <li class="list-item"><span class="bullet">•</span> Por que existe essa relação?</li>
+            <li class="list-item"><span class="bullet">•</span> O que podemos aprender com essa experiência?</li>
+            <li class="list-item"><span class="bullet">•</span> Como isso se aplica na gestão de um negócio?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-warning">
+      <span class="label-warning">
+        Entrega
+      </span>
+      <h2 class="title-warning">
+        Infográfico ou mapa mental
+      </h2>
+      <p class="desc-warning">
+        Após a palestra, produza um <strong>infográfico ou mapa mental</strong>
+        relacionando as experiências, histórias ou ideias apresentadas por
+        Hortência com os conceitos estudados na disciplina.
+      </p>
+      
+      <div class="warning-box">
+        <p>
+          <span class="warning-title">Atenção aos requisitos:</span>
+          O trabalho deve apresentar <span class="highlight">pelo menos cinco relações</span>. Não basta escrever o nome do conceito: explique brevemente a conexão lógica com alguma situação concreta apresentada na palestra.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Disciplina de Empreendedorismo • UFMS
+    </footer>
+
+  </main>
+
+</body>
+</html>
